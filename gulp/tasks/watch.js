@@ -9,6 +9,12 @@ gulp.task('watch', function () {
     });
     gulp.watch('./app/index.html').on('change', browserSync.reload);
     gulp.watch('./app/assets/styles/**/*.css', gulp.series('styles','cssInject'));
+    gulp.watch('./app/assets/scripts/**/*.js', gulp.series('scripts', 'scriptsRefresh'));
+});
+
+gulp.task('scriptsRefresh', function (done) {
+    browserSync.reload();
+    done();
 });
 
 gulp.task('cssInject', function () {
