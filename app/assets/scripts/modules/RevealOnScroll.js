@@ -16,7 +16,7 @@ class RevealOnScroll {
     createWaypoints() {
         const self = this;
         this.itemsToReveal.each(function() {
-            const currentItem = this;
+            let currentItem = this;
             new Waypoint({
                 element: currentItem,
                 handler: () => {
